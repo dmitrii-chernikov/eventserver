@@ -1,9 +1,9 @@
-defmodule Eventserver.MixProject do
+defmodule ElixirEventServer.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :eventserver,
+      app: :elixir_event_server,
       version: "0.1.0",
       elixir: "~> 1.13",
       start_permanent: Mix.env() == :prod,
@@ -14,7 +14,8 @@ defmodule Eventserver.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:logger]
+      extra_applications: [:logger],
+      mod: {Concurrent.Application, []}
     ]
   end
 
